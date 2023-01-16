@@ -11,15 +11,19 @@ class MarvelTokenAdapter: RequestAdapter {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         
-        let apiPublicKey = "3f8a28a3ffcc869b5e314e5220a4b8e7"
-        let apiPrivateKey = "6a79f3c0a905c586aec3d6be8342489f7ff24c20"
+        guard let apiPublicKey = ProcessInfo.processInfo.environment["MARVEL_PUBLIC_KEY"],
+              let apiPrivateKey = ProcessInfo.processInfo.environment["MARVEL_PRIVATE_KEY"] else {
+            Log.error("ERROR: You forgot set MARVEL_PUBLIC_KEY or MARVEL_PRIVATE_KEY")
+            completion(Result.failure(AuthenticationError.missingCredential))
+            return
+        }
         
         let hash = (apiPrivateKey + apiPublicKey).md5Hash()
         
         let params: Parameters = [
             "apikey": apiPublicKey,
             "ts":"",
-            "hash":hash
+            "hash": hash
         ]
         
         guard let urlRequest = try? URLEncoding.default.encode(urlRequest, with: params) else {
