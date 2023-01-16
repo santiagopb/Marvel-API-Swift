@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectSeriesSummary: Codable {
+struct ApiObjectSeriesSummary: Codable {
     let resourceURI: String?
     let name: String?
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectComicList: Codable {
+struct ApiObjectComicList: Codable {
     let available: Int?
     let returned: Int?
     let collectionURI: String?

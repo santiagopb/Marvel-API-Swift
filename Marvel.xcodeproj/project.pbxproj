@@ -41,6 +41,7 @@
 		B5AC6FD929759EC000E7B1ED /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */; };
 		B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */; };
 		B5AC6FDD29759EE800E7B1ED /* CharacterListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */; };
+		B5C875BE2975DF9A005D29D1 /* ApiRestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRouter.swift; sourceTree = "<group>"; };
 		B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListProtocols.swift; sourceTree = "<group>"; };
+		B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestManager.swift; sourceTree = "<group>"; };
 		C3BB36BBD2A561726A9C7237 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		ED548DC0CC0F53D490A1F6E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				B5AAA681297553FB00AF1121 /* interceptors */,
 				B5AAA67F297550B300AF1121 /* ApiRestClient.swift */,
 				B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */,
+				B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */,
 				B5AC6FC9297596A600E7B1ED /* ApiObjectEventList.swift in Sources */,
 				B5AC6FA429756CAB00E7B1ED /* MarvelTokenAdapter.swift in Sources */,
+				B5C875BE2975DF9A005D29D1 /* ApiRestManager.swift in Sources */,
 				B5AC6FCB2975979200E7B1ED /* ApiObjectEventSummary.swift in Sources */,
 				B5AC6FBB29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift in Sources */,
 				B5AC6FCF2975980B00E7B1ED /* ApiObjectSeriesSummary.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectCharacterDataWrapper: Codable {
+struct ApiObjectCharacterDataWrapper: Codable {
     let code: Int?
     let status: String?
     let copyright: String?

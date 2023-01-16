@@ -11,19 +11,15 @@ class ApiRestClient {
     static let LIMIT_PER_PAGE = 10
     
     private var urlService: String
-    private var apiPublicKey: String
-    private var apiPrivateKey: String
     
     private var manager: Session
     
-    init(url: String, apiPublicKey: String, apiPrivateKey: String,
+    init(url: String,
          requestRetrier: RequestRetrier? = nil,
          requestAdapter: RequestAdapter? = nil,
          eventMonitor: EventMonitor? = nil,
          urlProtocols: [AnyClass]? = nil) {
         self.urlService = url
-        self.apiPublicKey = apiPublicKey
-        self.apiPrivateKey = apiPrivateKey
         
         let configuration: URLSessionConfiguration = {
             let config = URLSessionConfiguration.default
@@ -55,7 +51,7 @@ class ApiRestClient {
                                eventMonitors: eventMonitors)
     }
     
-    internal func getUrlService(service: String) -> String {
+    internal func getUrlService(_ service: String) -> String {
         return self.urlService + service
     }
     
@@ -69,7 +65,7 @@ class ApiRestClient {
     
     private func request(service: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.httpBody, headers: HTTPHeaders? = nil) -> DataRequest {
         
-        return manager.request(service,
+        return manager.request(getUrlService(service),
                                method: method,
                                parameters: parameters,
                                encoding: encoding,

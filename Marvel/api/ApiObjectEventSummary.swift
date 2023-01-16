@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectEventSummary: Codable {
+struct ApiObjectEventSummary: Codable {
     let resourceURI: String?
     let name: String?
 }

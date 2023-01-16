@@ -11,4 +11,14 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     var view: PresenterToViewCharacterListProtocol?
     var interactor: PresenterToInteractorCharacterListProtocol?
     var router: PresenterToRouterCharacterListProtocol?
+    
+    func viewIsReady() {
+        loadCharacters()
+    }
+    
+    private func loadCharacters() {
+        interactor?.loadCharacters(completion: { response in
+            print("HEMOS LEIDO ALGO")
+        })
+    }
 }

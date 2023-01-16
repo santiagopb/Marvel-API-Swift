@@ -16,8 +16,8 @@ class CharacterListRouter: PresenterToRouterCharacterListProtocol {
         let interactor: PresenterToInteractorCharacterListProtocol = CharacterListInteractor()
         let router: PresenterToRouterCharacterListProtocol = CharacterListRouter()
         
-        view.presenter
-        presenter.view = presenter
+        view.presenter = presenter
+        presenter.view = view as? PresenterToViewCharacterListProtocol
         presenter.interactor = interactor
         presenter.router = router
         

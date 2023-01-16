@@ -9,15 +9,16 @@ import Foundation
 
 class CharacterRepository {
     
-    fileprivate var apiRestMarvel: ApiRestMarvel
-    private var page = 1
+    fileprivate var apiRestMarvel: ApiRestMarvel?
+    private var page = 0
+    private var characterList: [Character] = []
     
-    init(apiRestMarvel: ApiRestMarvel) {
+    init(apiRestMarvel: ApiRestMarvel?) {
         self.apiRestMarvel = apiRestMarvel
     }
     
-    func getCharacters() {
-        self.apiRestMarvel.getCharacters(limit: ApiRestMarvel.LIMIT_PER_PAGE, page: page)?.responseJSON(completionHandler: { response in
+    func getCharacters(completion: @escaping ([Character]) -> Void) {
+        self.apiRestMarvel?.getCharacters(limit: ApiRestMarvel.LIMIT_PER_PAGE, page: page)?.responseJSON(completionHandler: { response in
             switch response.result {
             case .success(let data):
                 if let apiObject = ApiObjectCharacterDataWrapper.build(with: response, to: ApiObjectCharacterDataWrapper.self) {
@@ -27,8 +28,30 @@ class CharacterRepository {
                     Log.debug("getCharacter - Ok without data")
                 }
             case .failure(let error):
-                Log.error("getCharacter - Fail ")
+                Log.error("getCharacter - Fail \(error.localizedDescription)")
             }
         })
     }
+}
+
+
+protocol Repository {
+    associatedtype T
+    
+    func get(id: Int, completionHandler: (T?, Error?) -> Void)
+    func list(completionHandler: ([T]?, Error?) -> Void)
+    func add(_ item: T, completionHandler: (Error?) -> Void)
+    func delete(_ item: T, completionHandler: (Error?) -> Void)
+    func edit(_ item: T, completionHandler: (Error?) -> Void)
+}
+
+import Combine
+protocol CombineRepository {
+    associatedtype T
+    
+    func get(id: Int) -> AnyPublisher<T, Error>
+    func list() -> AnyPublisher<[T], Error>
+    func add(_ item: T) -> AnyPublisher<Void, Error>
+    func delete(_ item: T) -> AnyPublisher<Void, Error>
+    func edit(_ item: T) -> AnyPublisher<Void, Error>
 }

@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-class CharacterListViewController: UIViewController {
-    var presenter: ViewToPresenterCharacterListProtocol?
+class CharacterListViewController: UIViewController, ViewToPresenterCharacterListProtocol {
+    var presenter: PresenterToViewCharacterListProtocol?
     
     override func viewDidLoad() {
-        print("Esto esta tomando forma")
+        presenter?.viewIsReady()
     }
+    
 }

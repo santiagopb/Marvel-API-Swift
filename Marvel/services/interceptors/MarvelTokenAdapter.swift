@@ -22,7 +22,7 @@ class MarvelTokenAdapter: RequestAdapter {
         
         let params: Parameters = [
             "apikey": apiPublicKey,
-            "ts":"",
+            "ts": "",
             "hash": hash
         ]
         

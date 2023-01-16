@@ -9,6 +9,7 @@ import Alamofire
 
 class ApiRestMarvel: ApiRestClient {
     
+    static let BASE_URL = "https://gateway.marvel.com/"
     private let API_PREFIX = "v1/public"
     
     /// Obtiene listas de personajes de historietas con filtros opcionales
@@ -19,7 +20,7 @@ class ApiRestMarvel: ApiRestClient {
         var serviceURL: String = API_PREFIX
         serviceURL = serviceURL + "/characters"
         serviceURL = serviceURL + "?orderBy=name"
-        serviceURL = serviceURL + "&offset=\(page)"
+        serviceURL = serviceURL + "&offset=\(page * limit)"
         serviceURL = serviceURL + "&limit=\(limit)"
         return self.get(service: serviceURL)
     }

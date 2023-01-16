@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectUrl: Codable {
+struct ApiObjectUrl: Codable {
     let type: String?
     let url: String?
 }

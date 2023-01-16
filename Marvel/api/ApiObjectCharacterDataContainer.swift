@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectCharacterDataContainer: Codable {
+struct ApiObjectCharacterDataContainer: Codable {
     let offset: Int?
     let limit: Int?
     let total: Int?

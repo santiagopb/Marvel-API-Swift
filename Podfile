@@ -8,5 +8,6 @@ target 'Marvel' do
   # Pods for Marvel
   pod 'Alamofire'
   pod 'SwiftyBeaver'
+  pod 'RealmSwift', '~> 10.34'
   
 end

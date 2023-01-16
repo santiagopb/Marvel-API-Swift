@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectImage: Codable {
+struct ApiObjectImage: Codable {
     enum CodingKeys: String, CodingKey {
         case path, imageExtension = "extension"
     }

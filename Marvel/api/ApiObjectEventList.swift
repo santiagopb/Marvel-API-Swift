@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiObjectEventList: Codable {
+struct ApiObjectEventList: Codable {
     let available: Int?
     let returned: Int?
     let collectionURI: String?
