@@ -14,6 +14,33 @@
 		B5AAA6702975401B00AF1121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA66E2975401B00AF1121 /* Main.storyboard */; };
 		B5AAA6722975401E00AF1121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA6712975401E00AF1121 /* Assets.xcassets */; };
 		B5AAA6752975401E00AF1121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA6732975401E00AF1121 /* LaunchScreen.storyboard */; };
+		B5AAA67E297549F900AF1121 /* ApiRestMarvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */; };
+		B5AAA680297550B300AF1121 /* ApiRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA67F297550B300AF1121 /* ApiRestClient.swift */; };
+		B5AC6FA429756CAB00E7B1ED /* MarvelTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */; };
+		B5AC6FA829757AC300E7B1ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FA729757AC300E7B1ED /* String+Extensions.swift */; };
+		B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */; };
+		B5AC6FAD29757D8400E7B1ED /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAC29757D8400E7B1ED /* Log.swift */; };
+		B5AC6FB02975810500E7B1ED /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAF2975810500E7B1ED /* CharacterRepository.swift */; };
+		B5AC6FB4297589F900E7B1ED /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FB3297589F900E7B1ED /* Character.swift */; };
+		B5AC6FB729758ACF00E7B1ED /* ApiObjectCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FB629758ACF00E7B1ED /* ApiObjectCharacter.swift */; };
+		B5AC6FB929758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FB829758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift */; };
+		B5AC6FBB29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FBA29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift */; };
+		B5AC6FBD297593E200E7B1ED /* ApiObjectUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FBC297593E200E7B1ED /* ApiObjectUrl.swift */; };
+		B5AC6FBF2975943700E7B1ED /* ApiObjectImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FBE2975943700E7B1ED /* ApiObjectImage.swift */; };
+		B5AC6FC1297594DD00E7B1ED /* ApiObjectComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FC0297594DD00E7B1ED /* ApiObjectComicList.swift */; };
+		B5AC6FC32975953B00E7B1ED /* ApiObjectComicSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FC22975953B00E7B1ED /* ApiObjectComicSummary.swift */; };
+		B5AC6FC52975958700E7B1ED /* ApiObjectStoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FC42975958700E7B1ED /* ApiObjectStoryList.swift */; };
+		B5AC6FC72975965600E7B1ED /* ApiObjectStorySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FC62975965600E7B1ED /* ApiObjectStorySummary.swift */; };
+		B5AC6FC9297596A600E7B1ED /* ApiObjectEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FC8297596A600E7B1ED /* ApiObjectEventList.swift */; };
+		B5AC6FCB2975979200E7B1ED /* ApiObjectEventSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FCA2975979200E7B1ED /* ApiObjectEventSummary.swift */; };
+		B5AC6FCD297597CE00E7B1ED /* ApiObjectSeriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FCC297597CE00E7B1ED /* ApiObjectSeriesList.swift */; };
+		B5AC6FCF2975980B00E7B1ED /* ApiObjectSeriesSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FCE2975980B00E7B1ED /* ApiObjectSeriesSummary.swift */; };
+		B5AC6FD12975993700E7B1ED /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD02975993700E7B1ED /* Decodable+Extensions.swift */; };
+		B5AC6FD529759E8800E7B1ED /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD429759E8800E7B1ED /* CharacterListViewController.swift */; };
+		B5AC6FD729759E9F00E7B1ED /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD629759E9F00E7B1ED /* CharacterListPresenter.swift */; };
+		B5AC6FD929759EC000E7B1ED /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */; };
+		B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */; };
+		B5AC6FDD29759EE800E7B1ED /* CharacterListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +53,33 @@
 		B5AAA6712975401E00AF1121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5AAA6742975401E00AF1121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5AAA6762975401E00AF1121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestMarvel.swift; sourceTree = "<group>"; };
+		B5AAA67F297550B300AF1121 /* ApiRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestClient.swift; sourceTree = "<group>"; };
+		B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTokenAdapter.swift; sourceTree = "<group>"; };
+		B5AC6FA729757AC300E7B1ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestMonitor.swift; sourceTree = "<group>"; };
+		B5AC6FAC29757D8400E7B1ED /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		B5AC6FAF2975810500E7B1ED /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		B5AC6FB3297589F900E7B1ED /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		B5AC6FB629758ACF00E7B1ED /* ApiObjectCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectCharacter.swift; sourceTree = "<group>"; };
+		B5AC6FB829758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectCharacterDataWrapper.swift; sourceTree = "<group>"; };
+		B5AC6FBA29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectCharacterDataContainer.swift; sourceTree = "<group>"; };
+		B5AC6FBC297593E200E7B1ED /* ApiObjectUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectUrl.swift; sourceTree = "<group>"; };
+		B5AC6FBE2975943700E7B1ED /* ApiObjectImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectImage.swift; sourceTree = "<group>"; };
+		B5AC6FC0297594DD00E7B1ED /* ApiObjectComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectComicList.swift; sourceTree = "<group>"; };
+		B5AC6FC22975953B00E7B1ED /* ApiObjectComicSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectComicSummary.swift; sourceTree = "<group>"; };
+		B5AC6FC42975958700E7B1ED /* ApiObjectStoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectStoryList.swift; sourceTree = "<group>"; };
+		B5AC6FC62975965600E7B1ED /* ApiObjectStorySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectStorySummary.swift; sourceTree = "<group>"; };
+		B5AC6FC8297596A600E7B1ED /* ApiObjectEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectEventList.swift; sourceTree = "<group>"; };
+		B5AC6FCA2975979200E7B1ED /* ApiObjectEventSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectEventSummary.swift; sourceTree = "<group>"; };
+		B5AC6FCC297597CE00E7B1ED /* ApiObjectSeriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectSeriesList.swift; sourceTree = "<group>"; };
+		B5AC6FCE2975980B00E7B1ED /* ApiObjectSeriesSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObjectSeriesSummary.swift; sourceTree = "<group>"; };
+		B5AC6FD02975993700E7B1ED /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
+		B5AC6FD429759E8800E7B1ED /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		B5AC6FD629759E9F00E7B1ED /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
+		B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
+		B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRouter.swift; sourceTree = "<group>"; };
+		B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListProtocols.swift; sourceTree = "<group>"; };
 		C3BB36BBD2A561726A9C7237 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		ED548DC0CC0F53D490A1F6E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +117,12 @@
 		B5AAA6672975401B00AF1121 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				B5AC6FB529758AA500E7B1ED /* api */,
+				B5AC6FB12975899D00E7B1ED /* db */,
+				B5AC6FAE2975809900E7B1ED /* repository */,
+				B5AC6FA529757A9500E7B1ED /* helpers */,
 				B5AAA67C297540A000AF1121 /* services */,
+				B5AC6FD229759D9D00E7B1ED /* modules */,
 				B5AAA6682975401B00AF1121 /* AppDelegate.swift */,
 				B5AAA66A2975401B00AF1121 /* SceneDelegate.swift */,
 				B5AAA66C2975401B00AF1121 /* ViewController.swift */,
@@ -78,8 +137,110 @@
 		B5AAA67C297540A000AF1121 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				B5AC6FA929757C5400E7B1ED /* monitors */,
+				B5AAA681297553FB00AF1121 /* interceptors */,
+				B5AAA67F297550B300AF1121 /* ApiRestClient.swift */,
+				B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		B5AAA681297553FB00AF1121 /* interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */,
+			);
+			path = interceptors;
+			sourceTree = "<group>";
+		};
+		B5AC6FA529757A9500E7B1ED /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FA629757AA700E7B1ED /* extensions */,
+				B5AC6FAC29757D8400E7B1ED /* Log.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		B5AC6FA629757AA700E7B1ED /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FA729757AC300E7B1ED /* String+Extensions.swift */,
+				B5AC6FD02975993700E7B1ED /* Decodable+Extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		B5AC6FA929757C5400E7B1ED /* monitors */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */,
+			);
+			path = monitors;
+			sourceTree = "<group>";
+		};
+		B5AC6FAE2975809900E7B1ED /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FAF2975810500E7B1ED /* CharacterRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		B5AC6FB12975899D00E7B1ED /* db */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FB2297589E500E7B1ED /* entities */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		B5AC6FB2297589E500E7B1ED /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FB3297589F900E7B1ED /* Character.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		B5AC6FB529758AA500E7B1ED /* api */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FB829758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift */,
+				B5AC6FBA29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift */,
+				B5AC6FB629758ACF00E7B1ED /* ApiObjectCharacter.swift */,
+				B5AC6FBC297593E200E7B1ED /* ApiObjectUrl.swift */,
+				B5AC6FBE2975943700E7B1ED /* ApiObjectImage.swift */,
+				B5AC6FC0297594DD00E7B1ED /* ApiObjectComicList.swift */,
+				B5AC6FC22975953B00E7B1ED /* ApiObjectComicSummary.swift */,
+				B5AC6FC42975958700E7B1ED /* ApiObjectStoryList.swift */,
+				B5AC6FC62975965600E7B1ED /* ApiObjectStorySummary.swift */,
+				B5AC6FC8297596A600E7B1ED /* ApiObjectEventList.swift */,
+				B5AC6FCA2975979200E7B1ED /* ApiObjectEventSummary.swift */,
+				B5AC6FCC297597CE00E7B1ED /* ApiObjectSeriesList.swift */,
+				B5AC6FCE2975980B00E7B1ED /* ApiObjectSeriesSummary.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		B5AC6FD229759D9D00E7B1ED /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FD329759E2100E7B1ED /* characterlist */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		B5AC6FD329759E2100E7B1ED /* characterlist */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FD429759E8800E7B1ED /* CharacterListViewController.swift */,
+				B5AC6FD629759E9F00E7B1ED /* CharacterListPresenter.swift */,
+				B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */,
+				B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */,
+				B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */,
+			);
+			path = characterlist;
 			sourceTree = "<group>";
 		};
 		DDD2C238E23C61739D360671 /* Pods */ = {
@@ -88,7 +249,6 @@
 				C3BB36BBD2A561726A9C7237 /* Pods-Marvel.debug.xcconfig */,
 				ED548DC0CC0F53D490A1F6E3 /* Pods-Marvel.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -216,8 +376,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5AAA66D2975401B00AF1121 /* ViewController.swift in Sources */,
+				B5AC6FDD29759EE800E7B1ED /* CharacterListProtocols.swift in Sources */,
+				B5AC6FB929758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift in Sources */,
+				B5AC6FB729758ACF00E7B1ED /* ApiObjectCharacter.swift in Sources */,
+				B5AC6FBF2975943700E7B1ED /* ApiObjectImage.swift in Sources */,
+				B5AC6FD729759E9F00E7B1ED /* CharacterListPresenter.swift in Sources */,
+				B5AC6FA829757AC300E7B1ED /* String+Extensions.swift in Sources */,
+				B5AC6FB4297589F900E7B1ED /* Character.swift in Sources */,
+				B5AC6FC1297594DD00E7B1ED /* ApiObjectComicList.swift in Sources */,
+				B5AC6FD929759EC000E7B1ED /* CharacterListInteractor.swift in Sources */,
+				B5AC6FAD29757D8400E7B1ED /* Log.swift in Sources */,
+				B5AC6FC32975953B00E7B1ED /* ApiObjectComicSummary.swift in Sources */,
+				B5AAA680297550B300AF1121 /* ApiRestClient.swift in Sources */,
+				B5AAA67E297549F900AF1121 /* ApiRestMarvel.swift in Sources */,
 				B5AAA6692975401B00AF1121 /* AppDelegate.swift in Sources */,
+				B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */,
+				B5AC6FC9297596A600E7B1ED /* ApiObjectEventList.swift in Sources */,
+				B5AC6FA429756CAB00E7B1ED /* MarvelTokenAdapter.swift in Sources */,
+				B5AC6FCB2975979200E7B1ED /* ApiObjectEventSummary.swift in Sources */,
+				B5AC6FBB29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift in Sources */,
+				B5AC6FCF2975980B00E7B1ED /* ApiObjectSeriesSummary.swift in Sources */,
+				B5AC6FC52975958700E7B1ED /* ApiObjectStoryList.swift in Sources */,
+				B5AC6FCD297597CE00E7B1ED /* ApiObjectSeriesList.swift in Sources */,
 				B5AAA66B2975401B00AF1121 /* SceneDelegate.swift in Sources */,
+				B5AC6FBD297593E200E7B1ED /* ApiObjectUrl.swift in Sources */,
+				B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */,
+				B5AC6FD529759E8800E7B1ED /* CharacterListViewController.swift in Sources */,
+				B5AC6FC72975965600E7B1ED /* ApiObjectStorySummary.swift in Sources */,
+				B5AC6FB02975810500E7B1ED /* CharacterRepository.swift in Sources */,
+				B5AC6FD12975993700E7B1ED /* Decodable+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

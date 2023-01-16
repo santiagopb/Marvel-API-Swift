@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.4.1)
+  - SwiftyBeaver (1.9.5)
 
 DEPENDENCIES:
   - Alamofire
+  - SwiftyBeaver
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: a90e9d49e8f2f9ab221a76578b0b3a9f14b78e69
+PODFILE CHECKSUM: ac4e382727b363fc67ce3b5b8a18d00f617bb42a
 
 COCOAPODS: 1.11.2
