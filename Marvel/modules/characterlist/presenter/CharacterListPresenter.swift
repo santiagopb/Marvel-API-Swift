@@ -11,17 +11,26 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     var view: ViewToPresenterCharacterListProtocol?
     var interactor: PresenterToInteractorCharacterListProtocol?
     var router: PresenterToRouterCharacterListProtocol?
+    var isLastPage: Bool = false
     
     func viewIsReady() {
-        loadCharacters()
+        //Leemos desde la primera pagina
+        loadCharacters(onFirstPage: true)
     }
     
-    private func loadCharacters() {
-        interactor?.loadCharacters(completion: { response in
+    private func loadCharacters(onFirstPage: Bool? = false) {
+        isLastPage = true // Para evitar consultas simultáneas
+        interactor?.loadCharacters(onFirstPage: onFirstPage, completion: { (response, isLastPage) in
+            self.isLastPage = isLastPage
             guard let data = response else {
                 return
             }
             self.view?.setupData(Array(data))
         })
+    }
+    
+    func loadMoreCharacters() {
+        //Leemos la siguiente pagina
+        loadCharacters()
     }
 }

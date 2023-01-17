@@ -9,9 +9,11 @@ import RealmSwift
 
 class CharacterListInteractor: PresenterToInteractorCharacterListProtocol {
     
-    func loadCharacters(completion: @escaping (Results<Character>?) -> Void) {
-        let repository = CharacterRepository(apiRestMarvel: ApiRestManager.shared.apiRestMarvel,
-                                             characterDao: CharacterDao())
-        repository.getCharacters(completion: completion)
+    let repository = CharacterRepository(apiRestMarvel: ApiRestManager.shared.apiRestMarvel,
+                                         characterDao: CharacterDao())
+    
+    func loadCharacters(onFirstPage: Bool? = false, completion: @escaping (Results<Character>?, Bool) -> Void) {
+        repository.getCharacters(onFirstPage: onFirstPage, completion: completion)
     }
+    
 }

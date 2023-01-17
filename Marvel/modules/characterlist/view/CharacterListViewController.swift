@@ -90,11 +90,7 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
                                                                              withReuseIdentifier: CharacterListHeaderView.id,
                                                                              for: indexPath)
 
-            guard let typedHeaderView = headerView as? CharacterListHeaderView
-            else { return headerView }
-            
-            //typedHeaderView.configure(<#T##Character#>)
-            return typedHeaderView
+            return headerView
         }
         
         return UICollectionReusableView()
@@ -106,5 +102,20 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 300)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard presenter?.isLastPage == false else { return }
+        let cardHeight: CGFloat = 355
+        let offsetY = scrollView.contentOffset.y
+        let screenHeight = scrollView.frame.size.height
+        let contentHeight = scrollView.contentSize.height
+        
+        let minPosition = offsetY + screenHeight + cardHeight
+        
+        if minPosition >= contentHeight {
+            Log.debug("Is loading more.....")
+            presenter?.loadMoreCharacters()
+        }
     }
 }

@@ -17,10 +17,12 @@ protocol PresenterToViewCharacterListProtocol: AnyObject {
     var interactor: PresenterToInteractorCharacterListProtocol? { get set }
     var router: PresenterToRouterCharacterListProtocol? { get set }
     func viewIsReady()
+    func loadMoreCharacters()
+    var isLastPage: Bool { get }
 }
 
 protocol PresenterToInteractorCharacterListProtocol: AnyObject {
-    func loadCharacters(completion: @escaping (Results<Character>?) -> Void)
+    func loadCharacters(onFirstPage: Bool?, completion: @escaping (Results<Character>?, Bool) -> Void)
 }
 
 protocol PresenterToRouterCharacterListProtocol: AnyObject {
