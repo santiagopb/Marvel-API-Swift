@@ -9,5 +9,6 @@ target 'Marvel' do
   pod 'Alamofire'
   pod 'SwiftyBeaver'
   pod 'RealmSwift', '~> 10.34'
+  pod 'SnapKit'
   
 end

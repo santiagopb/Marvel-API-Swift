@@ -5,11 +5,13 @@ PODS:
   - Realm/Headers (10.34.0)
   - RealmSwift (10.34.0):
     - Realm (= 10.34.0)
+  - SnapKit (5.6.0)
   - SwiftyBeaver (1.9.5)
 
 DEPENDENCIES:
   - Alamofire
   - RealmSwift (~> 10.34)
+  - SnapKit
   - SwiftyBeaver
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - Alamofire
     - Realm
     - RealmSwift
+    - SnapKit
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Realm: 991e7c4d6d37f1d6470a48bb072782ef00b91b67
   RealmSwift: 11e77934e4af6d011d2970645fe56e11fa0e3c2c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: 5a0e9461dd162bf0ee5cd331bab3946fba6dd328
+PODFILE CHECKSUM: 108d04a555b999708a4c5365716f3dd41033d6a0
 
 COCOAPODS: 1.11.2

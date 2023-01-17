@@ -8,7 +8,7 @@
 import RealmSwift
 
 class ComicSummary: Object {
-    @Persisted var resourceURI: String
+    @Persisted(primaryKey: true) var resourceURI: String
     @Persisted var name: String
     
     static func build(apiObject: ApiObjectComicSummary?) -> ComicSummary? {

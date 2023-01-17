@@ -9,7 +9,7 @@ import RealmSwift
 
 class StorySummary: Object {
     @Persisted var resourceURI: String
-    @Persisted var name: String
+    @Persisted(primaryKey: true) var name: String
     @Persisted var type: String
     
     static func build(apiObject: ApiObjectStorySummary) -> StorySummary? {

@@ -9,7 +9,7 @@ import RealmSwift
 
 class EventSummary: Object {
     @Persisted var resourceURI: String
-    @Persisted var name: String
+    @Persisted(primaryKey: true) var name: String
     
     static func build(apiObject: ApiObjectEventSummary) -> EventSummary? {
         guard let name = apiObject.name else { return nil }

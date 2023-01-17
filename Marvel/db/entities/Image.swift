@@ -8,7 +8,7 @@
 import RealmSwift
 
 class Image: Object {
-    @Persisted var path: String
+    @Persisted(primaryKey: true) var path: String
     @Persisted var imageExtension: String
     
     static func build(apiObject: ApiObjectImage?) -> Image? {
