@@ -18,7 +18,8 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     
     private func loadCharacters() {
         interactor?.loadCharacters(completion: { response in
-            print("HEMOS LEIDO ALGO")
+            print(response)
+            print("Ok: 200")
         })
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Santiago Pereira on 16/1/23.
 //
 
-import Foundation
+import RealmSwift
 
 protocol ViewToPresenterCharacterListProtocol: AnyObject {
     var presenter: PresenterToViewCharacterListProtocol? { get set }
@@ -19,7 +19,7 @@ protocol PresenterToViewCharacterListProtocol: AnyObject {
 }
 
 protocol PresenterToInteractorCharacterListProtocol: AnyObject {
-    func loadCharacters(completion: @escaping ([Character]) -> Void)
+    func loadCharacters(completion: @escaping (Results<Character>?) -> Void)
 }
 
 protocol PresenterToRouterCharacterListProtocol: AnyObject {
