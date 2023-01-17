@@ -33,4 +33,14 @@ class Character: Object {
         
         return object
     }
+    
+    var thumbnailUrl: String? {
+        get {
+            guard let path = self.thumbnail?.path,
+                    let imageExtension = thumbnail?.imageExtension else {
+                return nil
+            }
+            return "\(path).\(imageExtension)".replacingOccurrences(of: "http", with: "https")
+        }
+    }
 }

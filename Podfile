@@ -10,5 +10,6 @@ target 'Marvel' do
   pod 'SwiftyBeaver'
   pod 'RealmSwift', '~> 10.34'
   pod 'SnapKit'
+  pod 'Kingfisher'
   
 end

@@ -25,7 +25,7 @@ class CharacterRepository {
                 if let apiObject = ApiObjectCharacterDataWrapper.build(with: response, to: ApiObjectCharacterDataWrapper.self) {
                     Log.debug("getCharacter - Ok with data \(data)")
                     let assamble = CharacterAssambler(characterDao: self.characterDao)
-                    assamble.assamble(dataWrapper: apiObject)
+                    assamble.assamble(dataWrapper: apiObject, isFirstPage: self.page == 0)
                 } else {
                     Log.debug("getCharacter - Ok without data")
                 }

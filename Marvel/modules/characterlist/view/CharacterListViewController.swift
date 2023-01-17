@@ -15,21 +15,34 @@ class CharacterListViewController: UIViewController, ViewToPresenterCharacterLis
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: 200, height: 200)
+        layout.itemSize = .init(width: 190, height: 335)
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 20
+        layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
+    func configureNavigation() {
+        navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
+        navigationController?.navigationBar.isTranslucent = false
+        /*UINavigationBar.appearance().barTintColor = .blue
+        UINavigationBar.appearance().tintColor = .red
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.yellow]
+        UINavigationBar.appearance().isTranslucent = false*/
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        configureNavigation()
         configureCollectionView()
         presenter?.viewIsReady()
+        navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
     }
     
     func configureCollectionView() {
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view)
@@ -39,7 +52,7 @@ class CharacterListViewController: UIViewController, ViewToPresenterCharacterLis
         }
         
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        collectionView.register(CharacterViewCell.self, forCellWithReuseIdentifier: CharacterViewCell.id)
     }
     
     func setupData(_ data: [Character]) {
@@ -56,15 +69,13 @@ extension CharacterListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
-        cell.backgroundColor = .red
-        let model = characters[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath) as? CharacterViewCell else {
+            return UICollectionViewCell()
+        }
         
-        var listContentConfiguration = UIListContentConfiguration.cell()
-        listContentConfiguration.text = model.name
-        listContentConfiguration.image = UIImage(systemName: "lasso")
+        let character = characters[indexPath.row]
         
-        cell.contentConfiguration = listContentConfiguration
+        cell.configure(character)
         return cell
     }
     

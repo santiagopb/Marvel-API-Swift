@@ -8,7 +8,7 @@
 import Alamofire
 
 class ApiRestClient {
-    static let LIMIT_PER_PAGE = 10
+    static let LIMIT_PER_PAGE = 20
     
     private var urlService: String
     
