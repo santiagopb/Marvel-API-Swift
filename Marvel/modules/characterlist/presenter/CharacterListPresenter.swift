@@ -22,8 +22,6 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
                 return
             }
             self.view?.setupData(Array(data))
-            print(response)
-            print("Ok: 200")
         })
     }
 }

@@ -58,6 +58,13 @@ extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         cell.backgroundColor = .red
+        let model = characters[indexPath.row]
+        
+        var listContentConfiguration = UIListContentConfiguration.cell()
+        listContentConfiguration.text = model.name
+        listContentConfiguration.image = UIImage(systemName: "lasso")
+        
+        cell.contentConfiguration = listContentConfiguration
         return cell
     }
     

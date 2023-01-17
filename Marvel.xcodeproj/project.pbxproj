@@ -128,6 +128,46 @@
 			path = assambler;
 			sourceTree = "<group>";
 		};
+		B599C2BD2977022E0018C024 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FD429759E8800E7B1ED /* CharacterListViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B599C2BE297702390018C024 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FD629759E9F00E7B1ED /* CharacterListPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		B599C2BF297702460018C024 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		B599C2C02977024F0018C024 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		B599C2C12977025F0018C024 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		B5AAA65C2975401B00AF1121 = {
 			isa = PBXGroup;
 			children = (
@@ -278,11 +318,11 @@
 		B5AC6FD329759E2100E7B1ED /* characterlist */ = {
 			isa = PBXGroup;
 			children = (
-				B5AC6FD429759E8800E7B1ED /* CharacterListViewController.swift */,
-				B5AC6FD629759E9F00E7B1ED /* CharacterListPresenter.swift */,
-				B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */,
-				B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */,
-				B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */,
+				B599C2BD2977022E0018C024 /* view */,
+				B599C2BE297702390018C024 /* presenter */,
+				B599C2BF297702460018C024 /* interactor */,
+				B599C2C02977024F0018C024 /* router */,
+				B599C2C12977025F0018C024 /* protocols */,
 			);
 			path = characterlist;
 			sourceTree = "<group>";
