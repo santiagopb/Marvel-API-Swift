@@ -27,18 +27,14 @@ class CharacterListViewController: UIViewController, ViewToPresenterCharacterLis
     func configureNavigation() {
         navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
         navigationController?.navigationBar.isTranslucent = false
-        /*UINavigationBar.appearance().barTintColor = .blue
-        UINavigationBar.appearance().tintColor = .red
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.yellow]
-        UINavigationBar.appearance().isTranslucent = false*/
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         configureNavigation()
         configureCollectionView()
         presenter?.viewIsReady()
-        navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
     }
     
     func configureCollectionView() {
@@ -52,7 +48,9 @@ class CharacterListViewController: UIViewController, ViewToPresenterCharacterLis
         }
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(CharacterViewCell.self, forCellWithReuseIdentifier: CharacterViewCell.id)
+        collectionView.register(CharacterListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: CharacterListHeaderView.id)
     }
     
     func setupData(_ data: [Character]) {
@@ -80,4 +78,33 @@ extension CharacterListViewController: UICollectionViewDataSource {
     }
     
     
+}
+
+extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        if kind == UICollectionView.elementKindSectionHeader {
+
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: CharacterListHeaderView.id,
+                                                                             for: indexPath)
+
+            guard let typedHeaderView = headerView as? CharacterListHeaderView
+            else { return headerView }
+            
+            //typedHeaderView.configure(<#T##Character#>)
+            return typedHeaderView
+        }
+        
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 300)
+    }
 }
