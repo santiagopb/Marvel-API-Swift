@@ -27,6 +27,11 @@
 		B599C2CA29771D2E0018C024 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B599C2C929771D2E0018C024 /* RobotoCondensed-Light.ttf */; };
 		B599C2CC297721AC0018C024 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2CB297721AC0018C024 /* UIImageView+Extensions.swift */; };
 		B599C2CE29773DDC0018C024 /* CharacterListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2CD29773DDC0018C024 /* CharacterListHeaderView.swift */; };
+		B599C2D62977569B0018C024 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2D52977569B0018C024 /* CharacterDetailViewController.swift */; };
+		B599C2D8297756B60018C024 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2D7297756B60018C024 /* CharacterDetailPresenter.swift */; };
+		B599C2DA297756C70018C024 /* CharacterDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2D9297756C70018C024 /* CharacterDetailInteractor.swift */; };
+		B599C2DC297756DA0018C024 /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2DB297756DA0018C024 /* CharacterDetailRouter.swift */; };
+		B599C2DE297756FC0018C024 /* CharacterDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599C2DD297756FC0018C024 /* CharacterDetailProtocols.swift */; };
 		B5AAA6692975401B00AF1121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA6682975401B00AF1121 /* AppDelegate.swift */; };
 		B5AAA66B2975401B00AF1121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA66A2975401B00AF1121 /* SceneDelegate.swift */; };
 		B5AAA6722975401E00AF1121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA6712975401E00AF1121 /* Assets.xcassets */; };
@@ -82,6 +87,11 @@
 		B599C2C929771D2E0018C024 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		B599C2CB297721AC0018C024 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		B599C2CD29773DDC0018C024 /* CharacterListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListHeaderView.swift; sourceTree = "<group>"; };
+		B599C2D52977569B0018C024 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		B599C2D7297756B60018C024 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		B599C2D9297756C70018C024 /* CharacterDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractor.swift; sourceTree = "<group>"; };
+		B599C2DB297756DA0018C024 /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
+		B599C2DD297756FC0018C024 /* CharacterDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailProtocols.swift; sourceTree = "<group>"; };
 		B5AAA6652975401B00AF1121 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5AAA6682975401B00AF1121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5AAA66A2975401B00AF1121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +200,58 @@
 				B599C2C929771D2E0018C024 /* RobotoCondensed-Light.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		B599C2CF297756420018C024 /* characterdetail */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2D42977567A0018C024 /* view */,
+				B599C2D3297756710018C024 /* presenter */,
+				B599C2D2297756680018C024 /* interactor */,
+				B599C2D1297756600018C024 /* router */,
+				B599C2D0297756570018C024 /* protocols */,
+			);
+			path = characterdetail;
+			sourceTree = "<group>";
+		};
+		B599C2D0297756570018C024 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2DD297756FC0018C024 /* CharacterDetailProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		B599C2D1297756600018C024 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2DB297756DA0018C024 /* CharacterDetailRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		B599C2D2297756680018C024 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2D9297756C70018C024 /* CharacterDetailInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		B599C2D3297756710018C024 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2D7297756B60018C024 /* CharacterDetailPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		B599C2D42977567A0018C024 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B599C2D52977569B0018C024 /* CharacterDetailViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		B5AAA65C2975401B00AF1121 = {
@@ -337,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AC6FD329759E2100E7B1ED /* characterlist */,
+				B599C2CF297756420018C024 /* characterdetail */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -491,6 +554,7 @@
 				B596CA97297600290095CC9E /* SeriesList.swift in Sources */,
 				B5AC6FB929758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift in Sources */,
 				B596CA8F2975FF5B0095CC9E /* StoryList.swift in Sources */,
+				B599C2DE297756FC0018C024 /* CharacterDetailProtocols.swift in Sources */,
 				B596CA932975FFCD0095CC9E /* EventList.swift in Sources */,
 				B5AC6FB729758ACF00E7B1ED /* ApiObjectCharacter.swift in Sources */,
 				B5AC6FBF2975943700E7B1ED /* ApiObjectImage.swift in Sources */,
@@ -504,6 +568,7 @@
 				B5AC6FC32975953B00E7B1ED /* ApiObjectComicSummary.swift in Sources */,
 				B5AAA680297550B300AF1121 /* ApiRestClient.swift in Sources */,
 				B5AAA67E297549F900AF1121 /* ApiRestMarvel.swift in Sources */,
+				B599C2D8297756B60018C024 /* CharacterDetailPresenter.swift in Sources */,
 				B596CA9B297602E00095CC9E /* DaoManager.swift in Sources */,
 				B5AAA6692975401B00AF1121 /* AppDelegate.swift in Sources */,
 				B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */,
@@ -520,6 +585,8 @@
 				B599C2CC297721AC0018C024 /* UIImageView+Extensions.swift in Sources */,
 				B5AAA66B2975401B00AF1121 /* SceneDelegate.swift in Sources */,
 				B5AC6FBD297593E200E7B1ED /* ApiObjectUrl.swift in Sources */,
+				B599C2DA297756C70018C024 /* CharacterDetailInteractor.swift in Sources */,
+				B599C2DC297756DA0018C024 /* CharacterDetailRouter.swift in Sources */,
 				B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */,
 				B5AC6FD529759E8800E7B1ED /* CharacterListViewController.swift in Sources */,
 				B599C2CE29773DDC0018C024 /* CharacterListHeaderView.swift in Sources */,
@@ -531,6 +598,7 @@
 				B596CA872975FCDC0095CC9E /* Image.swift in Sources */,
 				B596CA9D297606550095CC9E /* CharacterDao.swift in Sources */,
 				B596CAA029760DD20095CC9E /* CharacterAssambler.swift in Sources */,
+				B599C2D62977569B0018C024 /* CharacterDetailViewController.swift in Sources */,
 				B599C2C32977035A0018C024 /* CharacterViewCell.swift in Sources */,
 				B5AC6FD12975993700E7B1ED /* Decodable+Extensions.swift in Sources */,
 			);

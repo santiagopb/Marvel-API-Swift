@@ -17,11 +17,14 @@ class CharacterListRouter: PresenterToRouterCharacterListProtocol {
         let router: PresenterToRouterCharacterListProtocol = CharacterListRouter()
         
         view.presenter = presenter
-        presenter.view = view as? ViewToPresenterCharacterListProtocol
+        presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
         
         return view
     }
     
+    func navigateToCharacterDetail(controller: UINavigationController, data: Character) {
+        CharacterDetailRouter.navigateToCharacterDetail(controller: controller, data: data)
+    }
 }

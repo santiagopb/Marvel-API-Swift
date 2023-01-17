@@ -5,7 +5,7 @@
 //  Created by Santiago Pereira on 16/1/23.
 //
 
-import Foundation
+import UIKit
 
 class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     var view: ViewToPresenterCharacterListProtocol?
@@ -32,5 +32,12 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     func loadMoreCharacters() {
         //Leemos la siguiente pagina
         loadCharacters()
+    }
+    
+    func navigateToCharacterDetail(data: Character) {
+        guard let controller = (view as? UIViewController)?.navigationController else {
+            return
+        }
+        router?.navigateToCharacterDetail(controller: controller, data: data)
     }
 }

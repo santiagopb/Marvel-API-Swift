@@ -118,4 +118,9 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
             presenter?.loadMoreCharacters()
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        presenter?.navigateToCharacterDetail(data: character)
+    }
 }
