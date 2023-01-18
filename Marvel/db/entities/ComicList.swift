@@ -20,6 +20,7 @@ class ComicList: EmbeddedObject {
         object.available = apiObject.available ?? 0
         object.returned = apiObject.returned ?? 0
         object.collectionURI = apiObject.collectionURI ?? ""
+        object.items = ComicSummary.build(apiObject: apiObject.items)
         
         return object
     }

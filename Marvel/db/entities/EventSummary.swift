@@ -11,13 +11,21 @@ class EventSummary: EmbeddedObject {
     @Persisted var resourceURI: String
     @Persisted var name: String
     
-    static func build(apiObject: ApiObjectEventSummary?) -> EventSummary? {
-        guard let apiObject = apiObject else { return nil }
+    static func build(apiObject: [ApiObjectEventSummary]?) -> List<EventSummary> {
+        let data: List<EventSummary> = List<EventSummary>()
         
-        let object = EventSummary()
-        object.resourceURI = apiObject.resourceURI ?? ""
-        object.name = apiObject.name ?? ""
+        guard let apiObject = apiObject,
+              apiObject.count > 0 else { return data }
         
-        return object
+        apiObject.forEach { item in
+            let object = EventSummary()
+            object.resourceURI = item.resourceURI ?? ""
+            object.name = item.name ?? ""
+            
+            data.append(object)
+        }
+        
+        return data
     }
+
 }

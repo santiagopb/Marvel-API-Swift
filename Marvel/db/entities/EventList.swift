@@ -20,6 +20,7 @@ class EventList: EmbeddedObject {
         object.available = apiObject.available ?? 0
         object.returned = apiObject.returned ?? 0
         object.collectionURI = apiObject.collectionURI ?? ""
+        object.items = EventSummary.build(apiObject: apiObject.items)
         
         return object
     }

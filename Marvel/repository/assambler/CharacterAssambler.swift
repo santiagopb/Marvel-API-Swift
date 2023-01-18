@@ -14,6 +14,9 @@ class CharacterAssambler {
         self.characterDao = characterDao
     }
     
+    /// Guardamos en base de datos  la lista de personajes de historietas
+    ///  - Parameter apiObject: ApiObjectCharacterDataWrapper: contiene el listado obtenido del WS
+    ///  - Parameter isFirstPage: Bool: se utiliza para limpiar los registros de la base en la primera lectura paginada del WS
     func assamble(apiObject: ApiObjectCharacterDataWrapper, isFirstPage: Bool = false) {
         guard let _characters = apiObject.data?.results else { return }
         
@@ -25,115 +28,24 @@ class CharacterAssambler {
         
         for _item in _characters {
             if let character = Character.build(apiObject: _item) {
-                
-                if let urls = getUrls(from: _item) {
-                    character.urls.append(objectsIn: urls)
-                }
-                
-                if let image = Image.build(apiObject: _item.thumbnail) {
-                    character.thumbnail = image
-                }
-                
-                if let comicList = ComicList.build(apiObject: _item.comics) {
-                    if let comicSummary = getComicSummary(from: _item) {
-                        comicList.items.append(objectsIn: comicSummary)
-                    }
-                    character.comics = comicList
-                }
-                
-                if let storyList = StoryList.build(apiObject: _item.stories) {
-                    if let storySummary = getStorySummary(from: _item) {
-                        storyList.items.append(objectsIn: storySummary)
-                    }
-                    character.stories = storyList
-                }
-                
-                if let eventList = EventList.build(apiObject: _item.events) {
-                    if let eventSummary = getEventSummary(from: _item) {
-                        eventList.items.append(objectsIn: eventSummary)
-                    }
-                    character.events = eventList
-                }
-                
-                if let seriesList = SeriesList.build(apiObject: _item.series) {
-                    if let seriesSummary = getSeriesSummary(from: _item) {
-                        seriesList.items.append(objectsIn: seriesSummary)
-                    }
-                    character.series = seriesList
-
-                }
-                
                 objects.append(character)
             } else {
-                Log.error("Fail building Character with data \(_item)")
+                Log.error("Fail building Character list with data \(_item)")
             }
         }
         
         characterDao.addObjects(with: objects)
     }
     
+    /// Guardamos en base de datos  un personaje
+    ///  - Parameter apiObject: ApiObjectCharacter: contiene el personaje obtenido del WS
     func assamble(apiObject: ApiObjectCharacter) {
+        guard let character = Character.build(apiObject: apiObject) else {
+            Log.error("Fail building Character with data \(apiObject)")
+            return
+        }
         
-    }
-    
-    private func getUrls(from apiObject: ApiObjectCharacter) -> [Url]? {
-        var data: [Url] = []
-        
-        apiObject.urls?.forEach({ _item in
-            if let object = Url.build(apiObject: _item) {
-                data.append(object)
-            }
-        })
-        
-        return data.count > 0 ? data : nil
-    }
-    
-    private func getComicSummary(from apiObject: ApiObjectCharacter) -> [ComicSummary]? {
-        var data: [ComicSummary] = []
-        
-        apiObject.comics?.items?.forEach({ _item in
-            if let object = ComicSummary.build(apiObject: _item) {
-                data.append(object)
-            }
-        })
-        
-        return data.count > 0 ? data : nil
-    }
-    
-    private func getStorySummary(from apiObject: ApiObjectCharacter) -> [StorySummary]? {
-        var data: [StorySummary] = []
-        
-        apiObject.stories?.items?.forEach({ _item in
-            if let object = StorySummary.build(apiObject: _item) {
-                data.append(object)
-            }
-        })
-        
-        return data.count > 0 ? data : nil
-    }
-    
-    private func getEventSummary(from apiObject: ApiObjectCharacter) -> [EventSummary]? {
-        var data: [EventSummary] = []
-        
-        apiObject.events?.items?.forEach({ _item in
-            if let object = EventSummary.build(apiObject: _item) {
-                data.append(object)
-            }
-        })
-        
-        return data.count > 0 ? data : nil
-    }
-    
-    private func getSeriesSummary(from apiObject: ApiObjectCharacter) -> [SeriesSummary]? {
-        var data: [SeriesSummary] = []
-        
-        apiObject.series?.items?.forEach({ _item in
-            if let object = SeriesSummary.build(apiObject: _item) {
-                data.append(object)
-            }
-        })
-        
-        return data.count > 0 ? data : nil
+        characterDao.addObject(with: character)
     }
     
 }

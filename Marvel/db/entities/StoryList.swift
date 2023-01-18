@@ -20,6 +20,7 @@ class StoryList: EmbeddedObject {
         object.available = apiObject.available ?? 0
         object.returned = apiObject.returned ?? 0
         object.collectionURI = apiObject.collectionURI ?? ""
+        object.items = StorySummary.build(apiObject: apiObject.items)
         
         return object
     }

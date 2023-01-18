@@ -11,13 +11,21 @@ class SeriesSummary: EmbeddedObject {
     @Persisted var resourceURI: String
     @Persisted var name: String
     
-    static func build(apiObject: ApiObjectSeriesSummary?) -> SeriesSummary? {
-        guard let apiObject = apiObject else { return nil }
+    static func build(apiObject: [ApiObjectSeriesSummary]?) -> List<SeriesSummary> {
+        let data: List<SeriesSummary> = List<SeriesSummary>()
         
-        let object = SeriesSummary()
-        object.resourceURI = apiObject.resourceURI ?? ""
-        object.name = apiObject.name ?? ""
+        guard let apiObject = apiObject,
+              apiObject.count > 0 else { return data }
+
+        apiObject.forEach { item in
+            let object = SeriesSummary()
+            object.resourceURI = item.resourceURI ?? ""
+            object.name = item.name ?? ""
+            
+            data.append(object)
+        }
         
-        return object
+        return data
     }
+
 }

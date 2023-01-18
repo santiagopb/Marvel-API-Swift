@@ -19,17 +19,22 @@ class CharacterRepository {
         self.characterDao = characterDao
     }
     
+    /// Obtenemos un personaje por Id
+    ///  - Parameter id: Int: se utiliza para filtrar la busqueda del personaje
+    ///  - Parameter completion: Character: obtenemos el personaje o ´nil´
     func getCharacter(id: Int, completion: @escaping (Character?) -> Void) {
         self.apiRestMarvel?.getCharacter(id: id)?.responseJSON(completionHandler: { response in
             switch response.result {
             case .success(let data):
-                if let apiObject = ApiObjectCharacter.build(with: response, to: ApiObjectCharacter.self) {
-                    Log.debug("getCharacter id: \(id) - Ok with data \(data)")
-                    /*let assamble = CharacterAssambler(characterDao: self.characterDao)
-                    assamble.assamble(dataWrapper: apiObject, isFirstPage: self.page == 0)*/
-                } else {
+                guard let apiObject = ApiObjectCharacter.build(with: response, to: ApiObjectCharacter.self) else {
                     Log.debug("getCharacter id: \(id) - Ok without data")
+                    return
                 }
+                
+                Log.debug("getCharacter id: \(id) - Ok with data \(data)")
+                let assamble = CharacterAssambler(characterDao: self.characterDao)
+                assamble.assamble(apiObject: apiObject)
+
             case .failure(let error):
                 Log.error("getCharacter id: \(id) - Fail \(error.localizedDescription)")
             }
@@ -37,6 +42,9 @@ class CharacterRepository {
         })
     }
     
+    /// Obtenemos un personaje por Id
+    ///  - Parameter ionFirstPaged: Bool: se utiliza para gestionar la paginacion (solo la primera pagina debe ser true)
+    ///  - Parameter completion: (Results<Character>?, Bool): obtenemos el listado de personajes o ´nil´ y un Boolean indicando si es la ultima página
     func getCharacters(onFirstPage: Bool? = false, completion: @escaping (Results<Character>?, Bool) -> Void) {
         if onFirstPage == true {
             self.page = 0
@@ -48,15 +56,17 @@ class CharacterRepository {
         self.apiRestMarvel?.getCharacters(limit: ApiRestMarvel.LIMIT_PER_PAGE, page: self.page)?.responseJSON(completionHandler: { response in
             switch response.result {
             case .success(let data):
-                if let apiObject = ApiObjectCharacterDataWrapper.build(with: response, to: ApiObjectCharacterDataWrapper.self) {
-                    Log.debug("getCharacter - Ok with data \(data)")
-                    let assamble = CharacterAssambler(characterDao: self.characterDao)
-                    assamble.assamble(apiObject: apiObject, isFirstPage: self.page == 0)
-                    
-                    self.isLastPage = apiObject.data?.count == 0 ? true : false
-                } else {
+                guard let apiObject = ApiObjectCharacterDataWrapper.build(with: response, to: ApiObjectCharacterDataWrapper.self) else {
                     Log.debug("getCharacter - Ok without data")
+                    return
                 }
+                
+                Log.debug("getCharacter - Ok with data \(data)")
+                let assamble = CharacterAssambler(characterDao: self.characterDao)
+                assamble.assamble(apiObject: apiObject, isFirstPage: self.page == 0)
+                
+                self.isLastPage = apiObject.data?.count == 0 ? true : false
+
             case .failure(let error):
                 Log.error("getCharacter - Fail \(error.localizedDescription)")
             }
@@ -64,8 +74,5 @@ class CharacterRepository {
         })
     }
     
-    private func getCharactersFromDatabase() -> Results<Character>? {
-        return self.characterDao.getCharacters()
-    }
 }
 

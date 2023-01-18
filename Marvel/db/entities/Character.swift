@@ -29,7 +29,12 @@ class Character: Object {
         object.summary = apiObject.description ?? ""
         object.modified = apiObject.modified ?? ""
         object.resourceURI = apiObject.resourceURI ?? ""
-        object.urls = List<Url>()
+        object.urls = Url.build(apiObject: apiObject.urls)
+        object.thumbnail = Image.build(apiObject: apiObject.thumbnail)
+        object.comics = ComicList.build(apiObject: apiObject.comics)
+        object.stories = StoryList.build(apiObject: apiObject.stories)
+        object.events = EventList.build(apiObject: apiObject.events)
+        object.series = SeriesList.build(apiObject: apiObject.series)
         
         return object
     }
