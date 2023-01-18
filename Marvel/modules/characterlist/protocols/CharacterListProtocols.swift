@@ -19,7 +19,7 @@ protocol PresenterToViewCharacterListProtocol: AnyObject {
     func viewIsReady()
     func loadMoreCharacters()
     var isLastPage: Bool { get }
-    func navigateToCharacterDetail(data: Character)
+    func navigateToCharacterDetail(with id: Int)
 }
 
 protocol PresenterToInteractorCharacterListProtocol: AnyObject {
@@ -27,5 +27,5 @@ protocol PresenterToInteractorCharacterListProtocol: AnyObject {
 }
 
 protocol PresenterToRouterCharacterListProtocol: AnyObject {
-    func navigateToCharacterDetail(controller: UINavigationController, data: Character)
+    func navigateToCharacterDetail(id: Int, controller: UINavigationController)
 }

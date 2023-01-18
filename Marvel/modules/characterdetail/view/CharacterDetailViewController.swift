@@ -12,63 +12,6 @@ class CharacterDetailViewController: UIViewController, ViewToPresenterCharacterD
     
     var presenter: PresenterToViewCharacterDetailProtocol?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        configureNavigation()
-        configureView()
-        presenter?.viewIsReady()
-    }
-    
-    func configureNavigation() {
-        let buttonItem: UIButton = {
-            let button = UIButton(type: .system)
-            button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-            button.backgroundColor = .white.withAlphaComponent(0.7)
-            button.layer.cornerRadius = 15
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.black.cgColor
-            return button
-        }()
-        
-        buttonItem.addTarget(self, action: #selector(backToMain), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonItem)
-        self.navigationController?.navigationBar.tintColor = .black
-    }
-    
-    @objc func backToMain() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func configureView() {
-        imageContainer.addSubview(thumbnailImageView)
-        thumbnailImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        
-        descriptionContainer.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
-        }
-        
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(imageContainer)
-        stackView.addArrangedSubview(descriptionContainer)
-        
-        stackView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-    }
-    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -114,13 +57,70 @@ class CharacterDetailViewController: UIViewController, ViewToPresenterCharacterD
         
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "RobotoCondensed-Bold", size: 16)
+        label.font = UIFont(name: "RobotoCondensed-Bold", size: 26)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        configureNavigation()
+        configureView()
+        presenter?.viewIsReady()
+    }
+    
+    func configureNavigation() {
+        let buttonItem: UIButton = {
+            let button = UIButton(type: .system)
+            button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            button.backgroundColor = .white.withAlphaComponent(0.7)
+            button.layer.cornerRadius = 15
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.black.cgColor
+            return button
+        }()
+        
+        buttonItem.addTarget(self, action: #selector(backToMain), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonItem)
+        self.navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func backToMain() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func configureView() {
+        imageContainer.addSubview(thumbnailImageView)
+        thumbnailImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        descriptionContainer.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(25)
+            make.leading.equalToSuperview().offset(25)
+            make.trailing.equalToSuperview().offset(-25)
+        }
+        
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(imageContainer)
+        stackView.addArrangedSubview(descriptionContainer)
+        
+        stackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
     
     func setupData(_ model: Character) {
         thumbnailImageView.setImageUrl(model.thumbnailUrl, placeholder: "slowmo")

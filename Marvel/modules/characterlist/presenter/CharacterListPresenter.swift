@@ -20,11 +20,14 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     
     private func loadCharacters(onFirstPage: Bool? = false) {
         isLastPage = true // Para evitar consultas simultáneas
+        
+        //Leemos
         interactor?.loadCharacters(onFirstPage: onFirstPage, completion: { (response, isLastPage) in
             self.isLastPage = isLastPage
             guard let data = response else {
                 return
             }
+            //Actualizamos la vista con el resultado
             self.view?.setupData(Array(data))
         })
     }
@@ -34,10 +37,10 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
         loadCharacters()
     }
     
-    func navigateToCharacterDetail(data: Character) {
+    func navigateToCharacterDetail(with id: Int) {
         guard let controller = (view as? UIViewController)?.navigationController else {
             return
         }
-        router?.navigateToCharacterDetail(controller: controller, data: data)
+        router?.navigateToCharacterDetail(id: id, controller: controller)
     }
 }

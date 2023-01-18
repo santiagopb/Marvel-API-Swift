@@ -12,6 +12,7 @@ import Kingfisher
 class CharacterViewCell: UICollectionViewCell {
     
     static let id = "CharacterViewCell"
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical

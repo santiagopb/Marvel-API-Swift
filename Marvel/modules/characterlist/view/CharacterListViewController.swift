@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class CharacterListViewController: UIViewController, ViewToPresenterCharacterListProtocol {
+    
     var presenter: PresenterToViewCharacterListProtocol?
     var characters: [Character] = []
     
@@ -24,17 +25,17 @@ class CharacterListViewController: UIViewController, ViewToPresenterCharacterLis
         return collectionView
     }()
     
-    func configureNavigation() {
-        navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureNavigation()
         configureCollectionView()
         presenter?.viewIsReady()
+    }
+    
+    func configureNavigation() {
+        navigationController?.navigationBar.barTintColor = UIColor.init(named: "grey")
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     func configureCollectionView() {
@@ -119,6 +120,6 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = characters[indexPath.row]
-        presenter?.navigateToCharacterDetail(data: character)
+        presenter?.navigateToCharacterDetail(with: character.id)
     }
 }

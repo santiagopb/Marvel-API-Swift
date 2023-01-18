@@ -21,6 +21,7 @@ class CharacterAssambler {
         guard let _characters = apiObject.data?.results else { return }
         
         if isFirstPage {
+            //Limpiamos los datos previos para comenzar con la primera página
             _ = characterDao.removeCharacters()
         }
         
@@ -28,12 +29,14 @@ class CharacterAssambler {
         
         for _item in _characters {
             if let character = Character.build(apiObject: _item) {
+                //Guardamos el personaje en un objeto temporal (memoria)
                 objects.append(character)
             } else {
                 Log.error("Fail building Character list with data \(_item)")
             }
         }
         
+        //Guardamos en base de datos los objetos
         characterDao.addObjects(with: objects)
     }
     

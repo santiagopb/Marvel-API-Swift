@@ -24,7 +24,7 @@ class CharacterListRouter: PresenterToRouterCharacterListProtocol {
         return view
     }
     
-    func navigateToCharacterDetail(controller: UINavigationController, data: Character) {
-        CharacterDetailRouter.navigateToCharacterDetail(controller: controller, data: data)
+    func navigateToCharacterDetail(id: Int, controller: UINavigationController) {
+        CharacterDetailRouter.navigateToCharacterDetail(with: id, controller: controller)
     }
 }

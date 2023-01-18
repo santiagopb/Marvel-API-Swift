@@ -16,7 +16,7 @@ protocol PresenterToViewCharacterDetailProtocol: AnyObject {
     var view: ViewToPresenterCharacterDetailProtocol? { get set }
     var interactor: PresenterToInteractorCharacterDetailProtocol? { get set }
     var router: PresenterToRouterCharacterDetailProtocol? { get set }
-    var character: Character? { get set }
+    var idCharacter: Int? { get set }
     func viewIsReady()
 }
 
