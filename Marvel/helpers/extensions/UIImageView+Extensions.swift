@@ -8,9 +8,11 @@
 import Kingfisher
 
 extension UIImageView {
+    
     func setImageUrl(_ url: String?, placeholder: String) {
         self.kf.setImage(with: URL(string: url ?? ""),
                          placeholder: UIImage(systemName: placeholder),
                          options: [.transition(.fade(0.2))])
     }
+    
 }

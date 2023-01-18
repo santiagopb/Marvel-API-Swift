@@ -12,11 +12,10 @@ class Url: EmbeddedObject {
     @Persisted var url: String
     
     static func build(apiObject: [ApiObjectUrl]?) -> List<Url> {
-        guard let apiObject = apiObject, apiObject.count > 0 else {
-            return List<Url>()
-        }
-        
         let data: List<Url> = List<Url>()
+        
+        guard let apiObject = apiObject,
+              apiObject.count > 0 else { return data }
         
         apiObject.forEach { item in
             let object = Url()
@@ -28,14 +27,5 @@ class Url: EmbeddedObject {
         
         return data
     }
-    /*
-    static func build(apiObject: ApiObjectUrl?) -> Url? {
-        guard let apiObject = apiObject else { return nil }
-        
-        let object = Url()
-        object.type = apiObject.type ?? ""
-        object.url = apiObject.url ?? ""
-        
-        return object
-    }*/
+
 }

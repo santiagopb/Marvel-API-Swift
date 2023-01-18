@@ -9,6 +9,8 @@ import RealmSwift
 
 class CharacterDao: DaoManager {
     
+    /// Obtenemos el listado de personajes almacenados
+    ///  - Returns: `Results<Character>` o nil
     func getCharacters() -> Results<Character>? {
         do {
             return try get(type: Character.self, predicate: nil, sort: [SortDescriptor(keyPath: "name", ascending: true)])
@@ -17,6 +19,9 @@ class CharacterDao: DaoManager {
         }
     }
     
+    /// Obtenemos un personaje por Id
+    ///  - Parameter id: Int: se utiliza para filtrar la busqueda del personaje
+    ///  - Returns: `Character` o nil
     func getCharacter(id: Int) -> Character? {
         do {
             return try get(type: Character.self, key: id)
@@ -25,6 +30,8 @@ class CharacterDao: DaoManager {
         }
     }
     
+    /// Eliminamos todos los personaje almacenados
+    ///  - Returns: `Bool`
     func removeCharacters() -> Bool {
         do {
             try delete(type: Character.self, predicate: nil)

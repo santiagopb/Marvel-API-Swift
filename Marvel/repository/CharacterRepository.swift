@@ -48,7 +48,7 @@ class CharacterRepository {
         })
     }
     
-    /// Obtenemos un personaje por Id
+    /// Obtenemos el listado de personajes paginado
     ///  - Parameter ionFirstPaged: Bool: se utiliza para gestionar la paginacion (solo la primera pagina debe ser true)
     ///  - Parameter completion: (Results<Character>?, Bool): obtenemos el listado de personajes o ´nil´ y un Boolean indicando si es la ultima página
     func getCharacters(onFirstPage: Bool? = false, completion: @escaping (Results<Character>?, Bool) -> Void) {

@@ -8,6 +8,7 @@
 import Alamofire
 
 final class MarvelEventMonitor: EventMonitor {
+    
     func requestDidResume(_ request: Request) {
         let body = request.request.flatMap { $0.httpBody.map { String(decoding: $0, as: UTF8.self) } } ?? "None"
         
