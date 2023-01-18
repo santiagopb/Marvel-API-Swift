@@ -11,6 +11,5 @@ target 'Marvel' do
   pod 'RealmSwift', '~> 10.34'
   pod 'SnapKit'
   pod 'Kingfisher'
-  pod 'lottie-ios'
   
 end
