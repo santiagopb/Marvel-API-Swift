@@ -7,16 +7,16 @@
 
 import RealmSwift
 
-class EventSummary: Object {
+class EventSummary: EmbeddedObject {
     @Persisted var resourceURI: String
-    @Persisted(primaryKey: true) var name: String
+    @Persisted var name: String
     
-    static func build(apiObject: ApiObjectEventSummary) -> EventSummary? {
-        guard let name = apiObject.name else { return nil }
+    static func build(apiObject: ApiObjectEventSummary?) -> EventSummary? {
+        guard let apiObject = apiObject else { return nil }
         
         let object = EventSummary()
         object.resourceURI = apiObject.resourceURI ?? ""
-        object.name = name
+        object.name = apiObject.name ?? ""
         
         return object
     }

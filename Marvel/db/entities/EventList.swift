@@ -7,10 +7,10 @@
 
 import RealmSwift
 
-class EventList: Object {
+class EventList: EmbeddedObject {
     @Persisted var available: Int
     @Persisted var returned: Int
-    @Persisted(primaryKey: true) var collectionURI: String
+    @Persisted var collectionURI: String
     @Persisted var items: List<EventSummary>
     
     static func build(apiObject: ApiObjectEventList?) -> EventList? {

@@ -7,16 +7,16 @@
 
 import RealmSwift
 
-class Url: Object {
+class Url: EmbeddedObject {
     @Persisted var type: String
-    @Persisted(primaryKey: true) var url: String
+    @Persisted var url: String
     
-    static func build(apiObject: ApiObjectUrl) -> Url? {
-        guard let url = apiObject.url else { return nil }
+    static func build(apiObject: ApiObjectUrl?) -> Url? {
+        guard let apiObject = apiObject else { return nil }
         
         let object = Url()
         object.type = apiObject.type ?? ""
-        object.url = url
+        object.url = apiObject.url ?? ""
         
         return object
     }

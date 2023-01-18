@@ -7,10 +7,10 @@
 
 import RealmSwift
 
-class SeriesList: Object {
+class SeriesList: EmbeddedObject {
     @Persisted var available: Int
     @Persisted var returned: Int
-    @Persisted(primaryKey: true) var collectionURI: String
+    @Persisted var collectionURI: String
     @Persisted var items: List<SeriesSummary>
     
     static func build(apiObject: ApiObjectSeriesList?) -> SeriesList? {

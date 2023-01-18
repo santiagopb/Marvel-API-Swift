@@ -28,48 +28,39 @@ class CharacterAssambler {
                 
                 if let urls = getUrls(from: _item) {
                     character.urls.append(objectsIn: urls)
-                    objects.append(contentsOf: urls)
                 }
                 
                 if let image = Image.build(apiObject: _item.thumbnail) {
                     character.thumbnail = image
-                    objects.append(image)
                 }
                 
                 if let comicList = ComicList.build(apiObject: _item.comics) {
                     if let comicSummary = getComicSummary(from: _item) {
                         comicList.items.append(objectsIn: comicSummary)
-                        objects.append(contentsOf: comicSummary)
                     }
                     character.comics = comicList
-                    objects.append(comicList)
                 }
                 
                 if let storyList = StoryList.build(apiObject: _item.stories) {
                     if let storySummary = getStorySummary(from: _item) {
                         storyList.items.append(objectsIn: storySummary)
-                        objects.append(contentsOf: storySummary)
                     }
                     character.stories = storyList
-                    objects.append(storyList)
                 }
                 
                 if let eventList = EventList.build(apiObject: _item.events) {
                     if let eventSummary = getEventSummary(from: _item) {
                         eventList.items.append(objectsIn: eventSummary)
-                        objects.append(contentsOf: eventSummary)
                     }
                     character.events = eventList
-                    objects.append(eventList)
                 }
                 
                 if let seriesList = SeriesList.build(apiObject: _item.series) {
                     if let seriesSummary = getSeriesSummary(from: _item) {
                         seriesList.items.append(objectsIn: seriesSummary)
-                        objects.append(contentsOf: seriesSummary)
                     }
                     character.series = seriesList
-                    objects.append(seriesList)
+
                 }
                 
                 objects.append(character)

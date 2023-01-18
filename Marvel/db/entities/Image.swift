@@ -7,15 +7,15 @@
 
 import RealmSwift
 
-class Image: Object {
-    @Persisted(primaryKey: true) var path: String
+class Image: EmbeddedObject {
+    @Persisted var path: String
     @Persisted var imageExtension: String
     
     static func build(apiObject: ApiObjectImage?) -> Image? {
-        guard let apiObject = apiObject, let path = apiObject.path else { return nil }
+        guard let apiObject = apiObject else { return nil }
         
         let object = Image()
-        object.path = path
+        object.path = apiObject.path ?? ""
         object.imageExtension = apiObject.imageExtension ?? ""
         
         return object

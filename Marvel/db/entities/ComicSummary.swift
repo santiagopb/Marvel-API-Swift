@@ -7,16 +7,16 @@
 
 import RealmSwift
 
-class ComicSummary: Object {
-    @Persisted(primaryKey: true) var resourceURI: String
+class ComicSummary: EmbeddedObject {
+    @Persisted var resourceURI: String
     @Persisted var name: String
     
     static func build(apiObject: ApiObjectComicSummary?) -> ComicSummary? {
-        guard let apiObject = apiObject, let name = apiObject.name else { return nil }
+        guard let apiObject = apiObject else { return nil }
         
         let object = ComicSummary()
         object.resourceURI = apiObject.resourceURI ?? ""
-        object.name = name
+        object.name = apiObject.name ?? ""
         
         return object
     }
