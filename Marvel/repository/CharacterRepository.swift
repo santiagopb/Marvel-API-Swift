@@ -19,6 +19,24 @@ class CharacterRepository {
         self.characterDao = characterDao
     }
     
+    func getCharacter(id: Int, completion: @escaping (Character?) -> Void) {
+        self.apiRestMarvel?.getCharacter(id: id)?.responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(let data):
+                if let apiObject = ApiObjectCharacter.build(with: response, to: ApiObjectCharacter.self) {
+                    Log.debug("getCharacter id: \(id) - Ok with data \(data)")
+                    /*let assamble = CharacterAssambler(characterDao: self.characterDao)
+                    assamble.assamble(dataWrapper: apiObject, isFirstPage: self.page == 0)*/
+                } else {
+                    Log.debug("getCharacter id: \(id) - Ok without data")
+                }
+            case .failure(let error):
+                Log.error("getCharacter id: \(id) - Fail \(error.localizedDescription)")
+            }
+            completion(self.characterDao.getCharacter(id: id))
+        })
+    }
+    
     func getCharacters(onFirstPage: Bool? = false, completion: @escaping (Results<Character>?, Bool) -> Void) {
         if onFirstPage == true {
             self.page = 0
@@ -33,7 +51,7 @@ class CharacterRepository {
                 if let apiObject = ApiObjectCharacterDataWrapper.build(with: response, to: ApiObjectCharacterDataWrapper.self) {
                     Log.debug("getCharacter - Ok with data \(data)")
                     let assamble = CharacterAssambler(characterDao: self.characterDao)
-                    assamble.assamble(dataWrapper: apiObject, isFirstPage: self.page == 0)
+                    assamble.assamble(apiObject: apiObject, isFirstPage: self.page == 0)
                     
                     self.isLastPage = apiObject.data?.count == 0 ? true : false
                 } else {

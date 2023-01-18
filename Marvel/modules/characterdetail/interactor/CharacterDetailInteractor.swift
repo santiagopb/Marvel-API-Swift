@@ -9,8 +9,10 @@ import RealmSwift
 
 class CharacterDetailInteractor: PresenterToInteractorCharacterDetailProtocol {
     
-    func loadCharacter(completion: @escaping (Results<Character>?) -> Void) {
-        
+    func loadCharacter(id: Int, completion: @escaping (Character?) -> Void) {
+        let repository = CharacterRepository(apiRestMarvel: ApiRestManager.shared.apiRestMarvel,
+                                             characterDao: CharacterDao())
+        repository.getCharacter(id: id, completion: completion)
     }
     
 }

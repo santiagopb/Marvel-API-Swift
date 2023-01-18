@@ -12,9 +12,21 @@ class CharacterDetailPresenter: PresenterToViewCharacterDetailProtocol {
     var view: ViewToPresenterCharacterDetailProtocol?
     var interactor: PresenterToInteractorCharacterDetailProtocol?
     var router: PresenterToRouterCharacterDetailProtocol?
+    
+    var character: Character?
 
     func viewIsReady() {
-        print("Ahora si el detalle")
+        loadCharacter()
     }
     
+    private func loadCharacter() {
+        guard let id = character?.id else { return }
+        interactor?.loadCharacter(id: id, completion: { response in
+            guard let data = response else {
+                return
+            }
+            self.character = data
+            self.view?.setupData(data)
+        })
+    }
 }

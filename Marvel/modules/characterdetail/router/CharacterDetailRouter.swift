@@ -11,13 +11,13 @@ import UIKit
 class CharacterDetailRouter: PresenterToRouterCharacterDetailProtocol {
     
     static func navigateToCharacterDetail(controller: UINavigationController, data: Character) {
-        let view = createModule()
+        let view = createModuleWith(data)
         view.modalPresentationStyle = .fullScreen
         controller.pushViewController(view, animated: true)
     }
     
     
-    static func createModule() -> UIViewController {
+    static func createModuleWith(_ data: Character) -> UIViewController {
         let view = CharacterDetailViewController()
         let presenter: PresenterToViewCharacterDetailProtocol = CharacterDetailPresenter()
         let interactor: PresenterToInteractorCharacterDetailProtocol = CharacterDetailInteractor()
@@ -27,6 +27,7 @@ class CharacterDetailRouter: PresenterToRouterCharacterDetailProtocol {
         presenter.view = view as? ViewToPresenterCharacterDetailProtocol
         presenter.interactor = interactor
         presenter.router = router
+        presenter.character = data
         
         return view
     }

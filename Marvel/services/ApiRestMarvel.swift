@@ -24,4 +24,14 @@ class ApiRestMarvel: ApiRestClient {
         serviceURL = serviceURL + "&limit=\(limit)"
         return self.get(service: serviceURL)
     }
+    
+    /// Obtiene listas de personajes de historietas con filtros opcionales
+    ///  - Parameter id: Int: identificador unico
+    ///  - Returns: `DataRequest` o nil
+    func getCharacter(id: Int) -> DataRequest? {
+        var serviceURL: String = API_PREFIX
+        serviceURL = serviceURL + "/characters"
+        serviceURL = serviceURL + "/\(id)"
+        return self.get(service: serviceURL)
+    }
 }

@@ -16,11 +16,12 @@ protocol PresenterToViewCharacterDetailProtocol: AnyObject {
     var view: ViewToPresenterCharacterDetailProtocol? { get set }
     var interactor: PresenterToInteractorCharacterDetailProtocol? { get set }
     var router: PresenterToRouterCharacterDetailProtocol? { get set }
+    var character: Character? { get set }
     func viewIsReady()
 }
 
 protocol PresenterToInteractorCharacterDetailProtocol: AnyObject {
-    func loadCharacter(completion: @escaping (Results<Character>?) -> Void)
+    func loadCharacter(id: Int, completion: @escaping (Character?) -> Void)
 }
 
 protocol PresenterToRouterCharacterDetailProtocol: AnyObject {

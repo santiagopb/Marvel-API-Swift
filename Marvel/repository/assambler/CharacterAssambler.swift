@@ -14,8 +14,8 @@ class CharacterAssambler {
         self.characterDao = characterDao
     }
     
-    func assamble(dataWrapper: ApiObjectCharacterDataWrapper, isFirstPage: Bool = false) {
-        guard let _characters = dataWrapper.data?.results else { return }
+    func assamble(apiObject: ApiObjectCharacterDataWrapper, isFirstPage: Bool = false) {
+        guard let _characters = apiObject.data?.results else { return }
         
         if isFirstPage {
             _ = characterDao.removeCharacters()
@@ -25,7 +25,6 @@ class CharacterAssambler {
         
         for _item in _characters {
             if let character = Character.build(apiObject: _item) {
-                
                 
                 if let urls = getUrls(from: _item) {
                     character.urls.append(objectsIn: urls)
@@ -80,6 +79,10 @@ class CharacterAssambler {
         }
         
         characterDao.addObjects(with: objects)
+    }
+    
+    func assamble(apiObject: ApiObjectCharacter) {
+        
     }
     
     private func getUrls(from apiObject: ApiObjectCharacter) -> [Url]? {
@@ -141,4 +144,5 @@ class CharacterAssambler {
         
         return data.count > 0 ? data : nil
     }
+    
 }

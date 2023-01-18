@@ -85,11 +85,9 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         if kind == UICollectionView.elementKindSectionHeader {
-
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: CharacterListHeaderView.id,
                                                                              for: indexPath)
-
             return headerView
         }
         
@@ -106,13 +104,13 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard presenter?.isLastPage == false else { return }
+        
         let cardHeight: CGFloat = 355
         let offsetY = scrollView.contentOffset.y
         let screenHeight = scrollView.frame.size.height
         let contentHeight = scrollView.contentSize.height
-        
         let minPosition = offsetY + screenHeight + cardHeight
-        
+    
         if minPosition >= contentHeight {
             Log.debug("Is loading more.....")
             presenter?.loadMoreCharacters()

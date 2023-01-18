@@ -17,6 +17,14 @@ class CharacterDao: DaoManager {
         }
     }
     
+    func getCharacter(id: Int) -> Character? {
+        do {
+            return try get(type: Character.self, key: id)
+        } catch _ as NSError {
+            return nil
+        }
+    }
+    
     func removeCharacters() -> Bool {
         do {
             try delete(type: Character.self, predicate: nil)
