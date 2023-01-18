@@ -37,15 +37,4 @@ class CharacterAssambler {
         characterDao.addObjects(with: objects)
     }
     
-    /// Guardamos en base de datos  un personaje
-    ///  - Parameter apiObject: ApiObjectCharacter: contiene el personaje obtenido del WS
-    func assamble(apiObject: ApiObjectCharacter) {
-        guard let character = Character.build(apiObject: apiObject) else {
-            Log.error("Fail building Character with data \(apiObject)")
-            return
-        }
-        
-        characterDao.addObject(with: character)
-    }
-    
 }

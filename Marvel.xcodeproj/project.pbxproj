@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A0781D5CADDFD5ADB47FB4CC /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A0D724C7563CB082EA1AB5 /* Pods_Marvel.framework */; };
+		B596BE0F29780C260065A67D /* MarvelEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596BE0E29780C260065A67D /* MarvelEventMonitor.swift */; };
+		B596BE1129780C760065A67D /* MarvelRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596BE1029780C760065A67D /* MarvelRequestAdapter.swift */; };
 		B596CA872975FCDC0095CC9E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596CA862975FCDC0095CC9E /* Image.swift */; };
 		B596CA892975FD8D0095CC9E /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596CA882975FD8D0095CC9E /* Url.swift */; };
 		B596CA8B2975FDE30095CC9E /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596CA8A2975FDE30095CC9E /* ComicList.swift */; };
@@ -38,9 +40,7 @@
 		B5AAA6752975401E00AF1121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA6732975401E00AF1121 /* LaunchScreen.storyboard */; };
 		B5AAA67E297549F900AF1121 /* ApiRestMarvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */; };
 		B5AAA680297550B300AF1121 /* ApiRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAA67F297550B300AF1121 /* ApiRestClient.swift */; };
-		B5AC6FA429756CAB00E7B1ED /* MarvelTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */; };
 		B5AC6FA829757AC300E7B1ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FA729757AC300E7B1ED /* String+Extensions.swift */; };
-		B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */; };
 		B5AC6FAD29757D8400E7B1ED /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAC29757D8400E7B1ED /* Log.swift */; };
 		B5AC6FB02975810500E7B1ED /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FAF2975810500E7B1ED /* CharacterRepository.swift */; };
 		B5AC6FB4297589F900E7B1ED /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FB3297589F900E7B1ED /* Character.swift */; };
@@ -63,11 +63,12 @@
 		B5AC6FD929759EC000E7B1ED /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */; };
 		B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */; };
 		B5AC6FDD29759EE800E7B1ED /* CharacterListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */; };
-		B5C875BE2975DF9A005D29D1 /* ApiRestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		72A0D724C7563CB082EA1AB5 /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B596BE0E29780C260065A67D /* MarvelEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEventMonitor.swift; sourceTree = "<group>"; };
+		B596BE1029780C760065A67D /* MarvelRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestAdapter.swift; sourceTree = "<group>"; };
 		B596CA862975FCDC0095CC9E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B596CA882975FD8D0095CC9E /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		B596CA8A2975FDE30095CC9E /* ComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicList.swift; sourceTree = "<group>"; };
@@ -100,9 +101,7 @@
 		B5AAA6762975401E00AF1121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestMarvel.swift; sourceTree = "<group>"; };
 		B5AAA67F297550B300AF1121 /* ApiRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestClient.swift; sourceTree = "<group>"; };
-		B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTokenAdapter.swift; sourceTree = "<group>"; };
 		B5AC6FA729757AC300E7B1ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestMonitor.swift; sourceTree = "<group>"; };
 		B5AC6FAC29757D8400E7B1ED /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B5AC6FAF2975810500E7B1ED /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		B5AC6FB3297589F900E7B1ED /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 		B5AC6FD829759EC000E7B1ED /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		B5AC6FDA29759ED300E7B1ED /* CharacterListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRouter.swift; sourceTree = "<group>"; };
 		B5AC6FDC29759EE800E7B1ED /* CharacterListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListProtocols.swift; sourceTree = "<group>"; };
-		B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestManager.swift; sourceTree = "<group>"; };
 		C3BB36BBD2A561726A9C7237 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		ED548DC0CC0F53D490A1F6E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,7 +296,6 @@
 				B5AAA681297553FB00AF1121 /* interceptors */,
 				B5AAA67F297550B300AF1121 /* ApiRestClient.swift */,
 				B5AAA67D297549F900AF1121 /* ApiRestMarvel.swift */,
-				B5C875BD2975DF9A005D29D1 /* ApiRestManager.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -306,7 +303,7 @@
 		B5AAA681297553FB00AF1121 /* interceptors */ = {
 			isa = PBXGroup;
 			children = (
-				B5AC6FA329756CAB00E7B1ED /* MarvelTokenAdapter.swift */,
+				B596BE1029780C760065A67D /* MarvelRequestAdapter.swift */,
 			);
 			path = interceptors;
 			sourceTree = "<group>";
@@ -333,7 +330,7 @@
 		B5AC6FA929757C5400E7B1ED /* monitors */ = {
 			isa = PBXGroup;
 			children = (
-				B5AC6FAA29757C7600E7B1ED /* MarvelRequestMonitor.swift */,
+				B596BE0E29780C260065A67D /* MarvelEventMonitor.swift */,
 			);
 			path = monitors;
 			sourceTree = "<group>";
@@ -550,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B596BE0F29780C260065A67D /* MarvelEventMonitor.swift in Sources */,
 				B5AC6FDD29759EE800E7B1ED /* CharacterListProtocols.swift in Sources */,
 				B596CA97297600290095CC9E /* SeriesList.swift in Sources */,
 				B5AC6FB929758C5C00E7B1ED /* ApiObjectCharacterDataWrapper.swift in Sources */,
@@ -571,11 +569,8 @@
 				B599C2D8297756B60018C024 /* CharacterDetailPresenter.swift in Sources */,
 				B596CA9B297602E00095CC9E /* DaoManager.swift in Sources */,
 				B5AAA6692975401B00AF1121 /* AppDelegate.swift in Sources */,
-				B5AC6FAB29757C7600E7B1ED /* MarvelRequestMonitor.swift in Sources */,
 				B5AC6FC9297596A600E7B1ED /* ApiObjectEventList.swift in Sources */,
 				B596CA912975FF8B0095CC9E /* StorySummary.swift in Sources */,
-				B5AC6FA429756CAB00E7B1ED /* MarvelTokenAdapter.swift in Sources */,
-				B5C875BE2975DF9A005D29D1 /* ApiRestManager.swift in Sources */,
 				B5AC6FCB2975979200E7B1ED /* ApiObjectEventSummary.swift in Sources */,
 				B5AC6FBB29758D0800E7B1ED /* ApiObjectCharacterDataContainer.swift in Sources */,
 				B5AC6FCF2975980B00E7B1ED /* ApiObjectSeriesSummary.swift in Sources */,
@@ -588,6 +583,7 @@
 				B599C2DA297756C70018C024 /* CharacterDetailInteractor.swift in Sources */,
 				B599C2DC297756DA0018C024 /* CharacterDetailRouter.swift in Sources */,
 				B5AC6FDB29759ED300E7B1ED /* CharacterListRouter.swift in Sources */,
+				B596BE1129780C760065A67D /* MarvelRequestAdapter.swift in Sources */,
 				B5AC6FD529759E8800E7B1ED /* CharacterListViewController.swift in Sources */,
 				B599C2CE29773DDC0018C024 /* CharacterListHeaderView.swift in Sources */,
 				B5AC6FC72975965600E7B1ED /* ApiObjectStorySummary.swift in Sources */,

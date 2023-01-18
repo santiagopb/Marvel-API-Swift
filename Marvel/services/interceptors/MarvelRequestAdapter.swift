@@ -1,13 +1,13 @@
 //
-//  MarvelTokenAdapter.swift
+//  MarvelRequestAdapter.swift
 //  Marvel
 //
-//  Created by Santiago Pereira on 16/1/23.
+//  Created by Santiago Pereira on 18/1/23.
 //
 
 import Alamofire
 
-class MarvelTokenAdapter: RequestAdapter {
+class MarvelRequestAdapter: RequestAdapter {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         

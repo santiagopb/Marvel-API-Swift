@@ -69,7 +69,6 @@ class DaoManager {
         
         do {
             try database.write {
-                Log.debug(object.description)
                 database.delete(object)
                 try database.commitWrite()
             }
@@ -87,7 +86,6 @@ class DaoManager {
         do {
             database.refresh()
             try database.write {
-                Log.debug(object.description)
                 database.add(object, update: .modified)
             }
         } catch(let e) {
@@ -104,7 +102,6 @@ class DaoManager {
         
         do {
             try database.write {
-                Log.debug(Array(objects).description)
                 database.add(objects, update: .modified)
             }
         } catch(let e) {
