@@ -23,8 +23,9 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
         
         //Leemos
         interactor?.loadCharacters(onFirstPage: onFirstPage, completion: { (response, isLastPage) in
-            self.isLastPage = isLastPage
+            self.isLastPage = isLastPage //Actualizamos el valor con la respuesta
             guard let data = response else {
+                Log.error("Can´t find data in loadCharacters")
                 return
             }
             //Actualizamos la vista con el resultado
@@ -39,6 +40,7 @@ class CharacterListPresenter: PresenterToViewCharacterListProtocol {
     
     func navigateToCharacterDetail(with id: Int) {
         guard let controller = (view as? UIViewController)?.navigationController else {
+            Log.error("Can´t find navigationController in navigateToCharacterDetail")
             return
         }
         router?.navigateToCharacterDetail(id: id, controller: controller)

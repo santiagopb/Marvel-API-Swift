@@ -28,6 +28,7 @@ class CharacterDetailPresenter: PresenterToViewCharacterDetailProtocol {
         //Leemos
         interactor?.loadCharacter(id: id, completion: { response in
             guard let data = response else {
+                Log.error("Can´t find data in loadCharacter")
                 return
             }
             //Actualizamos la vista con el resultado
