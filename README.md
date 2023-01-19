@@ -18,7 +18,7 @@ $ pod install
 
 Al abrir la aplicación debemos configurar las variables de entorno MARVEL_PUBLIC_KEY y MARVEL_PRIVATE_KEY con los datos obtenidos de la API de [Marvel](https://developer.marvel.com/docs).
 
-Para ello vamos a abrir el editor de esquemas, seleccionamos ejecutar (Run) en el lado izquierdo del editor y hacemos clic en el de botón Argumentos en la parte superior del editor para acceder a las variables de entorno. 
+Para ello vamos a abrir el editor de esquemas, seleccionamos ejecutar (Run) en el lado izquierdo del editor y hacemos clic en el botón Argumentos en la parte superior del editor para acceder a las variables de entorno. 
 
 Por último utilizamos el botón Agregar (+) para agregar las variables de entorno.
 
